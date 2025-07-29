@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Hub - Your Intelligent Source for Breaking News</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__brand">
+                    <h1 class="header__title">AI News Hub</h1>
+                    <p class="header__tagline">Your Intelligent Source for Breaking News</p>
+                </div>
+                <div class="header__actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search news...">
+                        <button class="search-btn" id="searchBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="21 21l-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navigation">
+        <div class="container">
+            <div class="nav__content">
+                <div class="nav__categories">
+                    <button class="nav__category active" data-category="all">All News</button>
+                    <button class="nav__category" data-category="general">General</button>
+                    <button class="nav__category" data-category="business">Business</button>
+                    <button class="nav__category" data-category="technology">Technology</button>
+                    <button class="nav__category" data-category="sports">Sports</button>
+                    <button class="nav__category" data-category="health">Health</button>
+                    <button class="nav__category" data-category="entertainment">Entertainment</button>
+                    <button class="nav__category" data-category="science">Science</button>
+                    <button class="nav__category" data-category="politics">Politics</button>
+                </div>
+                <div class="update-status">
+                    <span class="update-indicator" id="updateIndicator">●</span>
+                    <span id="lastUpdate">Last updated: Loading...</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="main__content">
+                <!-- News Grid -->
+                <section class="news-section">
+                    <div class="news-header">
+                        <h2 id="sectionTitle">Breaking News</h2>
+                        <p class="news-subtitle">Stay informed with the latest updates</p>
+                    </div>
+                    
+                    <!-- Loading State -->
+                    <div class="loading" id="loading">
+                        <div class="loading__spinner"></div>
+                        <p>Loading latest news...</p>
+                    </div>
+
+                    <!-- Error State -->
+                    <div class="error hidden" id="error">
+                        <div class="error__content">
+                            <p>Failed to load news articles</p>
+                            <button class="btn btn--primary" id="retryBtn">Retry</button>
+                        </div>
+                    </div>
+
+                    <!-- News Grid -->
+                    <div class="news-grid" id="newsGrid">
+                        <!-- News articles will be dynamically inserted here -->
+                    </div>
+
+                    <!-- No Results -->
+                    <div class="no-results hidden" id="noResults">
+                        <div class="no-results__content">
+                            <h3>No articles found</h3>
+                            <p>Try adjusting your search or category filter</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar__section">
+                        <h3 class="sidebar__title">Quick Filters</h3>
+                        <div class="sidebar__filters">
+                            <button class="filter-btn active" data-category="all">All Categories</button>
+                            <button class="filter-btn" data-category="general">General</button>
+                            <button class="filter-btn" data-category="technology">Technology</button>
+                            <button class="filter-btn" data-category="business">Business</button>
+                            <button class="filter-btn" data-category="sports">Sports</button>
+                            <button class="filter-btn" data-category="health">Health</button>
+                            <button class="filter-btn" data-category="science">Science</button>
+                            <button class="filter-btn" data-category="politics">Politics</button>
+                            <button class="filter-btn" data-category="entertainment">Entertainment</button>
+                        </div>
+                    </div>
+
+                    <div class="sidebar__section">
+                        <h3 class="sidebar__title">Update Schedule</h3>
+                        <div class="update-info">
+                            <p>Automatic updates:</p>
+                            <ul>
+                                <li>4:00 AM Daily</li>
+                                <li>2:00 PM Daily</li>
+                            </ul>
+                            <button class="btn btn--outline btn--sm" id="refreshBtn">Refresh Now</button>
+                        </div>
+                    </div>
+
+                    <div class="sidebar__section">
+                        <h3 class="sidebar__title">News Sources</h3>
+                        <div class="sources-list" id="sourcesList">
+                            <!-- Sources will be populated dynamically -->
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h4>AI News Hub</h4>
+                    <p>Powered by intelligent news aggregation technology</p>
+                </div>
+                <div class="footer__links">
+                    <p>&copy; 2025 AI News Hub. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
